@@ -1,0 +1,4 @@
+909d2625c716cebb846218604f54369de9436729133004d041b65ec7345d618f  packages/rancher-monitoring/overlay/app-README.md
+5f70aa54b398ef0da4bc0a8afdad1fb80d3dab23d7997124bed8de4cfd6547f8  packages/rancher-monitoring/overlay/CHANGELOG.md
+83ee1e5f762c0fcc2acac8923248151d089b396d4fbd0a61eaafaf4d197332bf  packages/rancher-monitoring/rancher-monitoring.patch
+5be9398bc7f810d70d75f8d7b3883721acc46d29ac36e4fc09720aa533550a20  packages/rancher-monitoring/package.yaml
