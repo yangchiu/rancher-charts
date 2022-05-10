@@ -9,22 +9,22 @@ image:
   longhorn:
     engine:
       repository: longhornio/longhorn-engine
-      tag: v1.3.0-preview1
+      tag: v1.2.4
     manager:
       repository: longhornio/longhorn-manager
-      tag: v1.3.0-preview1
+      tag: v1.2.4
     ui:
       repository: longhornio/longhorn-ui
-      tag: v1.3.0-preview1
+      tag: v1.2.4
     instanceManager:
       repository: longhornio/longhorn-instance-manager
-      tag: v1_20220505
+      tag: v1_20220303
     shareManager:
       repository: longhornio/longhorn-share-manager
-      tag: v1_20220506
+      tag: v1_20211020
     backingImageManager:
       repository: longhornio/backing-image-manager
-      tag: v3_20220506
+      tag: v2_20210820
   csi:
     attacher:
       repository: longhornio/csi-attacher
@@ -50,16 +50,12 @@ service:
   manager:
     type: ClusterIP
     nodePort: ""
-    loadBalancerIP: ""
-    loadBalancerSourceRanges: ""
 
 persistence:
   defaultClass: true
   defaultFsType: ext4
   defaultClassReplicaCount: 3
-  defaultDataLocality: disabled # best-effort otherwise
   reclaimPolicy: Delete
-  migratable: false
   recurringJobSelector:
     enable: false
     jobList: []
@@ -114,10 +110,7 @@ defaultSettings:
   backingImageRecoveryWaitInterval: ~
   guaranteedEngineManagerCPU: ~
   guaranteedReplicaManagerCPU: ~
-  kubernetesClusterAutoscalerEnabled: ~
-  orphanAutoDeletion: ~
 privateRegistry:
-  createSecret: ~
   registryUrl: ~
   registryUser: ~
   registryPasswd: ~
@@ -198,10 +191,6 @@ ingress:
   ## If TLS is set to true, you must declare what secret will store the key/certificate for TLS
   tlsSecret: longhorn.local-tls
 
-  ## If ingress is enabled you can set the default ingress path
-  ## then you can access the UI by using the following full path {{host}}+{{path}}
-  path: /
-
   ## Ingress annotations done as key:value pairs
   ## If you're using kube-lego, you will want to add:
   ## kubernetes.io/tls-acme: true
@@ -237,7 +226,3 @@ namespaceOverride: ""
 
 # Annotations to add to the Longhorn Manager DaemonSet Pods. Optional.
 annotations: {}
-
-serviceAccount:
-  # Annotations to add to the service account
-  annotations: {}
