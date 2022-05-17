@@ -2,3 +2,7 @@ rancher-istio:
 - 100.2.1+up1.12.6
 rancher-vsphere-cpi:
 - 100.4.0+up1.2.2
+longhorn:
+- 100.2.1+up1.3.0-rc1
+longhorn-crd:
+- 100.2.1+up1.3.0-rc1
